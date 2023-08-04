@@ -13,6 +13,5 @@ export const getServerSideProps: GetServerSideProps<{
   }> = async () => {
     const res = await fetch('https://api.github.com/repos/vercel/next.js')
     const repo = await res.json()
-    console.log(repo)
     return { props: { repo } }
   }

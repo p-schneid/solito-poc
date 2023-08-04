@@ -1,13 +1,13 @@
-import { createParam } from 'solito'
+'use client'
+
 import { TextLink } from 'solito/link'
 import { Text } from 'app/design/typography'
 import { View } from 'app/design/view'
 import { useState } from 'react'
 import { Button } from 'app/design/buttton'
 
-const { useParam } = createParam<{ id: string }>()
 
-export function UserDetailScreen() {
+export function UserDetailScreen({ id }) {
   const [counter, setCounter] = useState(0)
 
   const onPress = () => {
@@ -15,7 +15,6 @@ export function UserDetailScreen() {
     setCounter(counter + 1)
   }
 
-  const [id] = useParam('id')
 
   return (
     <View className="flex-1 items-center justify-center">
